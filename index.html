@@ -228,6 +228,49 @@
     font-size: 20px;
   }
 }
+  .decor-heart {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  font-size: 13px;
+  opacity: 0;
+  animation: floatHeart 6s ease-in-out forwards;
+}
+
+@keyframes floatHeart {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+  }
+
+  15% {
+    opacity: 0.45;
+  }
+
+  80% {
+    opacity: 0.25;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-90px) scale(1.15);
+  }
+}
+
+.final-heart {
+  display: inline-block;
+  animation: gentlePulse 2.2s ease-in-out infinite;
+}
+
+@keyframes gentlePulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.12);
+  }
+}      
 </style>
 </head>
 
@@ -927,6 +970,342 @@ music.addEventListener("ended", function () {
   musicButton.setAttribute("aria-label", "Play music");
 });
 </script>
+    ```html
+<!-- =========================================================
+     FINAL CLOSING SCREEN + DECORATIONS + MOBILE FINISH
+     ========================================================= -->
+
+<style>
+
+/* ---------- FINAL CLOSING SCREEN ---------- */
+
+.final-closing-screen {
+    min-height: 100svh;
+    box-sizing: border-box;
+    padding: 90px 24px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.08), transparent 28%),
+        radial-gradient(circle at 80% 70%, rgba(255,150,190,0.08), transparent 30%),
+        linear-gradient(180deg, #080b1c 0%, #10183d 50%, #080b1c 100%);
+
+    color: #fff;
+}
+
+/* Soft background glow */
+
+.final-closing-screen::before {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: rgba(255,120,170,0.08);
+    filter: blur(70px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+/* ---------- DECORATIVE STARS ---------- */
+
+.final-star {
+    position: absolute;
+    color: rgba(255,255,255,0.7);
+    font-size: 10px;
+    animation: finalTwinkle 3s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.final-star:nth-child(1) {
+    top: 16%;
+    left: 12%;
+}
+
+.final-star:nth-child(2) {
+    top: 28%;
+    right: 15%;
+    animation-delay: 1s;
+}
+
+.final-star:nth-child(3) {
+    bottom: 25%;
+    left: 18%;
+    animation-delay: 1.8s;
+}
+
+.final-star:nth-child(4) {
+    bottom: 18%;
+    right: 12%;
+    animation-delay: 2.5s;
+}
+
+@keyframes finalTwinkle {
+    0%, 100% {
+        opacity: 0.25;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.35);
+    }
+}
+
+/* ---------- CLOSING CONTENT ---------- */
+
+.final-closing-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    width: 100%;
+    animation: finalAppear 1.5s ease forwards;
+}
+
+.final-small-line {
+    font-family: Montserrat, sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    opacity: 0.65;
+    margin-bottom: 24px;
+}
+
+.final-closing-heart {
+    display: inline-block;
+    font-size: 38px;
+    margin-bottom: 22px;
+    animation: finalHeartBeat 2.2s ease-in-out infinite;
+}
+
+.final-closing-title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(42px, 8vw, 72px);
+    font-weight: 500;
+    line-height: 1.05;
+    margin: 0 0 28px;
+}
+
+.final-closing-text {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(20px, 4vw, 27px);
+    line-height: 1.7;
+    margin: 0 auto;
+    max-width: 600px;
+    opacity: 0.92;
+}
+
+.final-closing-text strong {
+    font-weight: 600;
+}
+
+.final-signature {
+    margin-top: 45px;
+    font-family: Montserrat, sans-serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    opacity: 0.7;
+    text-transform: uppercase;
+}
+
+.final-signature-heart {
+    display: inline-block;
+    margin-left: 5px;
+    color: #ff8eae;
+}
+
+/* ---------- ANIMATIONS ---------- */
+
+@keyframes finalAppear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes finalHeartBeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.16);
+    }
+}
+
+/* ---------- MOBILE OPTIMIZATION ---------- */
+
+@media (max-width: 600px) {
+
+    .final-closing-screen {
+        min-height: 100svh;
+        padding: 75px 20px 65px;
+    }
+
+    .final-small-line {
+        font-size: 9px;
+        letter-spacing: 3px;
+        margin-bottom: 20px;
+    }
+
+    .final-closing-heart {
+        font-size: 32px;
+        margin-bottom: 18px;
+    }
+
+    .final-closing-title {
+        font-size: 46px;
+        margin-bottom: 22px;
+    }
+
+    .final-closing-text {
+        font-size: 21px;
+        line-height: 1.65;
+        padding: 0 5px;
+    }
+
+    .final-signature {
+        margin-top: 35px;
+        font-size: 8px;
+        letter-spacing: 3px;
+    }
+
+    .final-star {
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .final-closing-screen {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .final-closing-title {
+        font-size: 40px;
+    }
+
+    .final-closing-text {
+        font-size: 19px;
+    }
+}
+
+</style>
+
+
+<!-- =========================================================
+     BEAUTIFUL CLOSING SCREEN
+     ========================================================= -->
+
+<section class="final-closing-screen">
+
+    <span class="final-star">✦</span>
+    <span class="final-star">✦</span>
+    <span class="final-star">✦</span>
+    <span class="final-star">✦</span>
+
+    <div class="final-closing-content">
+
+        <div class="final-small-line">
+            One last thing...
+        </div>
+
+        <div class="final-closing-heart">
+            ♥
+        </div>
+
+        <h2 class="final-closing-title">
+            To many more<br>
+            memories, Ishan.
+        </h2>
+
+        <p class="final-closing-text">
+            More little dates.<br>
+            More silly conversations.<br>
+            More late-night talks.<br>
+            More laughter.<br>
+            More moments that become memories.
+            <br><br>
+
+            <strong>
+                And most importantly...<br>
+                more of us. ❤️
+            </strong>
+        </p>
+
+        <div class="final-signature">
+            ALWAYS YOUR SHANU'S PERSON
+            <span class="final-signature-heart">♥</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FINAL MOBILE POLISH
+     ========================================================= -->
+
+<script>
+
+document.documentElement.style.scrollBehavior = "smooth";
+
+document.body.style.overflowX = "hidden";
+
+/* Closing section fade-in */
+
+const finalClosing =
+    document.querySelector(".final-closing-screen");
+
+if (finalClosing && "IntersectionObserver" in window) {
+
+    finalClosing.style.opacity = "0";
+    finalClosing.style.transition = "opacity 1.2s ease";
+
+    const finalObserver = new IntersectionObserver(
+        function(entries) {
+
+            entries.forEach(function(entry) {
+
+                if (entry.isIntersecting) {
+
+                    finalClosing.style.opacity = "1";
+
+                    finalObserver.unobserve(finalClosing);
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.15
+        }
+    );
+
+    finalObserver.observe(finalClosing);
+}
+
+</script>
+
+</body>
+</html>
+```
+
 </body>
 </html>
 
