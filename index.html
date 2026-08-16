@@ -176,6 +176,59 @@
         }
 
     </style>
+    <style>
+#musicPlayer {
+  position: fixed;
+  right: 18px;
+  bottom: 20px;
+  z-index: 9999;
+}
+
+#musicButton {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.35);
+  background: rgba(20,25,55,0.88);
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  backdrop-filter: blur(8px);
+}
+
+#musicLabel {
+  position: absolute;
+  right: 64px;
+  top: 12px;
+  white-space: nowrap;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  color: white;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+#musicPlayer:hover #musicLabel {
+  opacity: 0.85;
+  transform: translateX(0);
+}
+
+@media (max-width:600px) {
+  #musicPlayer {
+    right: 14px;
+    bottom: 16px;
+  }
+
+  #musicButton {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -841,6 +894,39 @@
 </div>
     
 </section>
+    <div id="musicPlayer">
+  <span id="musicLabel">Our song ❤️</span>
+
+  <button id="musicButton" aria-label="Play music">
+    ▶
+  </button>
+
+  <audio id="ourSong" preload="metadata">
+    <source src="Aaro%20Nee(KoshalWorld.Com).mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<script>
+const music = document.getElementById("ourSong");
+const musicButton = document.getElementById("musicButton");
+
+musicButton.addEventListener("click", function () {
+  if (music.paused) {
+    music.play();
+    musicButton.textContent = "Ⅱ";
+    musicButton.setAttribute("aria-label", "Pause music");
+  } else {
+    music.pause();
+    musicButton.textContent = "▶";
+    musicButton.setAttribute("aria-label", "Play music");
+  }
+});
+
+music.addEventListener("ended", function () {
+  musicButton.textContent = "▶";
+  musicButton.setAttribute("aria-label", "Play music");
+});
+</script>
 </body>
 </html>
 
