@@ -652,6 +652,105 @@
   </div>
 
 </section>
+
+<!-- OUR LITTLE MESSAGES -->
+.messages-section {
+    min-height: 100vh;
+    padding: 90px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.messages-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(38px, 7vw, 64px);
+    margin: 12px 0 15px;
+}
+
+.messages-intro {
+    max-width: 520px;
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 45px;
+    opacity: 0.85;
+}
+
+.message-gallery {
+    width: 100%;
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+}
+
+.message-card {
+    padding: 15px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 18px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.18);
+}
+
+.message-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+}
+
+.message-card p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    line-height: 1.5;
+    margin: 18px 8px 8px;
+}
+
+@media (max-width: 600px) {
+    .messages-section {
+        padding: 70px 18px;
+    }
+
+    .message-gallery {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .messages-intro {
+        font-size: 16px;
+    }
+}
+    
+<section class="messages-section">
+    <div class="small-text">A FEW LITTLE THINGS I STILL KEEP ❤️</div>
+
+    <h2>Our Little Messages</h2>
+
+    <p class="messages-intro">
+        Some messages were just a few words… but somehow they meant so much. 🥹
+    </p>
+
+    <div class="message-gallery">
+
+        <div class="message-card">
+            <img src="thinking-of-you.jpg" alt="Thinking of you Sneha">
+            <p>Little reminders that you were thinking of me. ❤️</p>
+        </div>
+
+        <div class="message-card">
+            <img src="love-you-shanu.jpg" alt="Love you Shanu">
+            <p>And the little “I miss you” moments I secretly love the most. 🥹❤️</p>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+    
+    
   <!-- THINGS I LOVE ABOUT YOU -->
 
 <section style="min-height:100vh; padding:90px 22px; text-align:center; background:linear-gradient(180deg,#111b3d,#080b1c); color:#f8f3ea;">
@@ -1305,6 +1404,178 @@ if (finalClosing && "IntersectionObserver" in window) {
 }
 
 </script>
+
+```html
+<!-- =========================
+     LAST MEMORY - CSS + HTML
+     ========================= -->
+
+<style>
+/* LAST MEMORY SECTION */
+.last-memory {
+    min-height: 100vh;
+    padding: 90px 20px 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.last-memory .memory-label {
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 15px;
+}
+
+.last-memory h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 8vw, 72px);
+    line-height: 1.05;
+    margin: 0 0 20px;
+}
+
+.last-memory .memory-subtitle {
+    max-width: 600px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 21px;
+    line-height: 1.7;
+    margin: 0 auto 40px;
+    opacity: 0.9;
+}
+
+.last-memory-image {
+    width: min(90%, 700px);
+    margin: 0 auto 45px;
+    padding: 12px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 22px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+}
+
+.last-memory-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+}
+
+.last-memory-note {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.last-memory-note p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 21px;
+    line-height: 1.8;
+    margin: 0 0 20px;
+}
+
+.last-memory-note .heart {
+    font-size: 28px;
+    margin-top: 15px;
+}
+
+.last-memory .forever {
+    margin-top: 35px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-style: italic;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+
+    .last-memory {
+        padding: 70px 18px 90px;
+    }
+
+    .last-memory .memory-subtitle {
+        font-size: 18px;
+    }
+
+    .last-memory-note p {
+        font-size: 18px;
+        line-height: 1.7;
+    }
+
+    .last-memory-image {
+        width: 95%;
+        padding: 8px;
+        border-radius: 18px;
+    }
+
+    .last-memory .forever {
+        font-size: 24px;
+    }
+}
+</style>
+
+
+<!-- =========================
+     LAST MEMORY - HTML
+     ========================= -->
+
+<section class="last-memory">
+
+    <div class="memory-label">
+        ONE LAST MEMORY...
+    </div>
+
+    <h2>
+        To many more<br>
+        memories, Ishan. ❤️
+    </h2>
+
+    <p class="memory-subtitle">
+        And if this little website could hold every memory,
+        every laugh, every call and every little moment...
+        I still wouldn't have enough space for everything I feel.
+    </p>
+
+    <!-- YOUR LAST ILLUSTRATION -->
+    <div class="last-memory-image">
+        <img src="last-memory.jpg" alt="Our little memory">
+    </div>
+
+    <div class="last-memory-note">
+
+        <p>
+            I honestly don't know how I managed to make all of this,
+            because I'm a dentist, not a coder. 😂
+            Without ChatGPT, I probably wouldn't have survived
+            the first line of code.
+        </p>
+
+        <p>
+            But I put my 200% brain usage into this,
+            because you are worth the effort. ❤️
+            I don't know if you'll like this little surprise,
+            but I really hope it makes you smile.
+        </p>
+
+        <p>
+            And maybe this is just the beginning...
+            because I hope you give me many more reasons,
+            memories and motivation to make silly little things
+            like this for you in the future. 🥹
+        </p>
+
+        <div class="heart">❤️</div>
+
+        <div class="forever">
+            Here's to us, and to everything still waiting for us.
+        </div>
+
+    </div>
+
+</section>
+    
 <style>
 .last-little-note {
     max-width: 650px;
