@@ -649,9 +649,116 @@
 
     </div>
 
-  </div>
+  <!-- =========================
+     OUR LITTLE MESSAGES
+     ========================= -->
+
+<style>
+.little-messages {
+    min-height: 100vh;
+    padding: 80px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.little-messages .section-label {
+    font-size: 12px;
+    letter-spacing: 4px;
+    opacity: 0.7;
+    margin-bottom: 15px;
+}
+
+.little-messages h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(40px, 7vw, 60px);
+    margin: 0 0 15px;
+}
+
+.little-messages .intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    line-height: 1.6;
+    max-width: 550px;
+    margin: 0 auto 40px;
+}
+
+.message-photos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 45px;
+    width: 100%;
+}
+
+.message-photo-card {
+    width: min(80%, 430px);
+}
+
+.message-photo-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 18px;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.25);
+}
+
+.message-photo-card p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    margin-top: 15px;
+    opacity: 0.9;
+}
+
+@media (max-width: 600px) {
+    .little-messages {
+        padding: 65px 18px;
+    }
+
+    .message-photo-card {
+        width: 90%;
+    }
+
+    .little-messages .intro {
+        font-size: 17px;
+    }
+}
+</style>
+
+
+<section class="little-messages">
+
+    <div class="section-label">
+        LITTLE THINGS ❤️
+    </div>
+
+    <h2>Thinking of You...</h2>
+
+    <p class="intro">
+        Sometimes it's not the big things...
+        it's these tiny little messages that make me smile. 🥹
+    </p>
+
+    <div class="message-photos">
+
+        <!-- THINKING OF YOU PHOTO -->
+        <div class="message-photo-card">
+            <img src="thinking-of-you.jpg" alt="Thinking of you Sneha">
+            <p>Someone was thinking of me. ❤️</p>
+        </div>
+
+        <!-- LOVE YOU SHANU PHOTO -->
+        <div class="message-photo-card">
+            <img src="love-you-shanu.jpg" alt="Love you Shanu">
+            <p>And then there were the little “I miss you” messages... 🥹❤️</p>
+        </div>
+
+    </div>
 
 </section>
+
 
     
   <!-- THINGS I LOVE ABOUT YOU -->
@@ -1308,7 +1415,6 @@ if (finalClosing && "IntersectionObserver" in window) {
 
 </script>
 
-  ```html
 <!-- =========================
      LAST MEMORY - CSS + HTML
      ========================= -->
